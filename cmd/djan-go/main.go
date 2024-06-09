@@ -12,6 +12,9 @@ import (
 //go:embed templates/main.tmpl
 var mainTmpl []byte
 
+//go:embed templates/urls.tmpl
+var urlTmpl []byte
+
 func parseArgs(args []string) error {
 	if len(args) == 1 {
 		return errors.New("missing command arguments")
@@ -64,6 +67,10 @@ func buildTemplate(args []string) error {
 	mainFile := filepath.Join(cmdAppPath, "main.go")
 	if err := os.WriteFile(mainFile, mainTmpl, filePerm); err != nil {
 		return fmt.Errorf(fileWriteErr, mainFile, err)
+	}
+	urlFile := filepath.Join(cmdAppPath, "urls.go")
+	if err := os.WriteFile(urlFile, urlTmpl, filePerm); err != nil {
+		return fmt.Errorf(fileWriteErr, urlFile, err)
 	}
 	return nil
 }

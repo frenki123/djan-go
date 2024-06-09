@@ -3,11 +3,11 @@ package main
 import (
 	"log"
 
-	godjan "frenki123/go-djan/internal"
+	"github.com/frenki123/djan-go/latest"
 )
 
 func main() {
-	srv := godjan.NewServer("{{.Host}}", "{{.Port}}", urlpaterns)
+	srv := django.NewServer("{{.Host}}", "{{.Port}}", urlpaterns)
 	err := srv.Run()
 	if err != nil {
 		log.Printf("Error: %s", err)
