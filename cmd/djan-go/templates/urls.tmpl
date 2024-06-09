@@ -1,0 +1,14 @@
+package main
+
+import (
+	"fmt"
+	godjan "frenki123/go-djan/internal"
+	"net/http"
+)
+
+func index(w http.ResponseWriter, r *http.Request) {
+	godjan.HTMLResponse(w, []byte("Hello, World!"))
+
+}
+
+var urlpaterns = []godjan.Path{godjan.NewPath("/", handler)}

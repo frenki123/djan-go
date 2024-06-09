@@ -1,0 +1,15 @@
+package main
+
+import (
+	"log"
+
+	godjan "frenki123/go-djan/internal"
+)
+
+func main() {
+	srv := godjan.NewServer("{{.Host}}", "{{.Port}}", urlpaterns)
+	err := srv.Run()
+	if err != nil {
+		log.Printf("Error: %s", err)
+	}
+}
