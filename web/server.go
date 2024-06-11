@@ -1,4 +1,4 @@
-package godjan
+package web
 
 import (
 	"context"

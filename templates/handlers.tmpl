@@ -1,0 +1,12 @@
+package handlers
+
+import (
+	"net/http"
+
+	"github.com/frenki123/djan-go/web"
+)
+
+func Index(w http.ResponseWriter, _ *http.Request) {
+	web.HTMLResponse(w, []byte("Hello, World!"))
+}
+

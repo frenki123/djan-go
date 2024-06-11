@@ -1,0 +1,9 @@
+package router
+
+import (
+	"{{.Module}}/handlers"
+
+	"github.com/frenki123/djan-go/web"
+)
+
+var UrlPaterns = []web.Path{web.NewPath("/", handlers.Index)}

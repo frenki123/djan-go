@@ -1,0 +1,17 @@
+package main
+
+import (
+	"log"
+
+	"{{.Module}}/router"
+
+	"github.com/frenki123/djan-go/web"
+)
+
+func main() {
+	srv := web.NewServer("{{.Host}}", "{{.Port}}", router.UrlPaterns)
+	err := srv.Run()
+	if err != nil {
+		log.Printf("Error: %s", err)
+	}
+}
